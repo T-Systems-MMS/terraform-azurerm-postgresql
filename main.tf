@@ -62,6 +62,16 @@ resource "azurerm_postgresql_database" "postgresql_database" {
   collation           = local.postgresql_database[each.key].collation
 }
 
+resource "azurerm_postgresql_virtual_network_rule" "postgresql_virtual_network_rule" {
+  for_each = var.postgresql_virtual_network_rule
+
+  name                = local.postgresql_virtual_network_rule[each.key].name == "" ? each.key : local.postgresql_virtual_network_rule[each.key].name
+  resource_group_name = local.postgresql_virtual_network_rule[each.key].resource_group_name
+  server_name = local.postgresql_virtual_network_rule[each.key].server_name
+  subnet_id = local.postgresql_virtual_network_rule[each.key].subnet_id
+  ignore_missing_vnet_service_endpoint = local.postgresql_virtual_network_rule[each.key].ignore_missing_vnet_service_endpoint
+}
+
 resource "azurerm_postgresql_firewall_rule" "postgresql_firewall_rule" {
   for_each = var.postgresql_firewall_rule
 

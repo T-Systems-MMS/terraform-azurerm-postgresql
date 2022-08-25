@@ -8,6 +8,11 @@ variable "postgresql_database" {
   default     = {}
   description = "resource definition, default settings are defined within locals and merged with var settings"
 }
+variable "postgresql_virtual_network_rule" {
+  type        = any
+  default     = {}
+  description = "resource definition, default settings are defined within locals and merged with var settings"
+}
 variable "postgresql_firewall_rule" {
   type        = any
   default     = {}
@@ -27,7 +32,7 @@ locals {
       creation_source_server_id         = null
       geo_redundant_backup_enabled      = null
       infrastructure_encryption_enabled = false
-      public_network_access_enabled     = false
+      public_network_access_enabled     = true
       restore_point_in_time             = null
       ssl_enforcement_enabled           = true
       ssl_minimal_tls_version_enforced  = null
@@ -38,6 +43,10 @@ locals {
     }
     postgresql_database = {
       name = ""
+    }
+    postgresql_virtual_network_rule = {
+      name = ""
+      ignore_missing_vnet_service_endpoint = true
     }
     postgresql_firewall_rule = {
       name = ""
@@ -63,6 +72,10 @@ locals {
   postgresql_database = {
     for postgresql_database in keys(var.postgresql_database) :
     postgresql_database => merge(local.default.postgresql_database, var.postgresql_database[postgresql_database])
+  }
+  postgresql_virtual_network_rule = {
+    for postgresql_virtual_network_rule in keys(var.postgresql_virtual_network_rule) :
+    postgresql_virtual_network_rule => merge(local.default.postgresql_virtual_network_rule, var.postgresql_virtual_network_rule[postgresql_virtual_network_rule])
   }
   postgresql_firewall_rule = {
     for postgresql_firewall_rule in keys(var.postgresql_firewall_rule) :
