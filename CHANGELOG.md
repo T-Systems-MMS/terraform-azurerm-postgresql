@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.1](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/tree/0.1.1) (2022-05-09)
+
+[Full Changelog](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/compare/0.1.0...0.1.1)
+
+**Merged pull requests:**
+
+- Update hashicorp/setup-terraform action to v2 [\#8](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/pull/8) ([renovate[bot]](https://github.com/apps/renovate))
+- Update creyD/prettier\_action action to v4 [\#7](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/pull/7) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action [\#6](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/pull/6) ([renovate[bot]](https://github.com/apps/renovate))
+- Update github-actions-x/commit action to v2.9 [\#5](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/pull/5) ([renovate[bot]](https://github.com/apps/renovate))
+- add renovate config [\#1](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/pull/1) ([michaelamattes](https://github.com/michaelamattes))
+
 ## [0.1.0](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/tree/0.1.0) (2022-03-31)
 
 [Full Changelog](https://github.com/T-Systems-MMS/terraform-azurerm-postgresql/compare/17d3c90f73c5fa0d8cf7e5ab6c3448570ad10cf3...0.1.0)
