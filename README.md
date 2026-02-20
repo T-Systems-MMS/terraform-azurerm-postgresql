@@ -1,3 +1,5 @@
+This module is deprecated. You can find the currently version here https://registry.terraform.io/modules/telekom-mms/database/azurerm/latest.
+
 <!-- BEGIN_TF_DOCS -->
 # postgresql
 
